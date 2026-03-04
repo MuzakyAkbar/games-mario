@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+  <title>🍄 Super Nusa Bros</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="wrapper">
+
+  <!-- ═══ HUD ═══ -->
+  <div id="hud">
+    <div class="hud-item">
+      <span class="hud-label">SKOR</span>
+      <span class="hud-val" id="hSkor">000000</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">KOIN</span>
+      <span class="hud-val" id="hKoin">🪙 00</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">DUNIA</span>
+      <span class="hud-val" id="hDunia">1‑1</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">WAKTU</span>
+      <span class="hud-val" id="hWaktu">300</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">NYAWA</span>
+      <span class="hud-val" id="hNyawa">🍄 × 3</span>
+    </div>
+  </div>
+
+  <!-- ═══ CANVAS ═══ -->
+  <div id="canvasBox">
+    <canvas id="gameCanvas" width="768" height="384"></canvas>
+
+    <!-- START SCREEN -->
+    <div class="overlay" id="ovStart">
+      <div class="ov-logo">🍄 SUPER<br>NUSA BROS</div>
+      <div class="ov-sub">
+        ← / → &nbsp;atau&nbsp; A / D &nbsp;— Bergerak<br>
+        ↑ / W / Z / Spasi &nbsp;— Lompat<br>
+        P / Esc &nbsp;— Pause<br><br>
+        Injak musuh untuk mengalahkan!<br>
+        Ambil koin &amp; jamur untuk bonus!
+      </div>
+      <button class="ov-btn" id="btnStart">▶ MULAI MAIN</button>
+    </div>
+
+    <!-- PAUSE SCREEN -->
+    <div class="overlay hide" id="ovPause">
+      <div class="ov-logo">⏸ PAUSE</div>
+      <button class="ov-btn" id="btnResume">▶ LANJUTKAN</button>
+      <button class="ov-btn" id="btnRestart1">↺ ULANG</button>
+    </div>
+
+    <!-- GAME OVER -->
+    <div class="overlay hide" id="ovOver">
+      <div class="ov-logo">💀 GAME<br>OVER</div>
+      <div class="ov-score" id="goScore"></div>
+      <button class="ov-btn" id="btnRestart2">↺ MAIN LAGI</button>
+    </div>
+
+    <!-- LEVEL CLEAR -->
+    <div class="overlay hide" id="ovClear">
+      <div class="ov-logo">🏁 LEVEL<br>CLEAR!</div>
+      <div class="ov-score" id="lcScore"></div>
+      <button class="ov-btn" id="btnNext">▶ LEVEL BERIKUTNYA</button>
+    </div>
+
+    <!-- WIN -->
+    <div class="overlay hide" id="ovWin">
+      <div class="ov-logo">🏆 KAMU<br>MENANG!</div>
+      <div class="ov-score" id="winScore"></div>
+      <button class="ov-btn" id="btnRestart3">↺ MAIN LAGI</button>
+    </div>
+  </div>
+
+  <!-- ═══ MOBILE CONTROLS ═══ -->
+  <div id="mobileCtrl">
+    <div class="ctrl-group">
+      <button class="ctrl-btn" id="cLeft"  aria-label="Kiri">◀</button>
+      <button class="ctrl-btn" id="cRight" aria-label="Kanan">▶</button>
+    </div>
+    <div class="ctrl-group">
+      <button class="ctrl-btn" id="cPause" aria-label="Pause">⏸</button>
+      <button class="ctrl-btn jump-btn" id="cJump" aria-label="Lompat">⬆</button>
+    </div>
+  </div>
+
+</div><!-- /wrapper -->
+
+<script src="game.js"></script>
+</body>
+</html>
